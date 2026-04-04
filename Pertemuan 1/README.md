@@ -23,7 +23,7 @@ void setup() {<br>
 
 void loop() {<br>
   digitalWrite(ledPin, HIGH);
-  delay(timeDelay);
+  delay(timeDelay);.
 
   digitalWrite(ledPin, LOW);<br>
   delay(timeDelay);
