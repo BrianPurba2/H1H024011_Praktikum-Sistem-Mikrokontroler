@@ -64,34 +64,34 @@ Jawab:Efek kanan ke kiri dibuat dengan perulangan for kedua yang dimulai dari pi
 
 4. Buatkan program agar LED menyala tiga LED kanan dan tiga LED kiri secara bergantian dan berikan penjelasan disetiap baris kode nya dalam bentuk README.md!
 Jawab:<br>
-void setup() {
+void setup() {<br>
   for (int pin = 2; pin <= 7; pin++) {
     pinMode(pin, OUTPUT);
   }
 }
 
-void loop() {
-  // tiga kiri nyala
-  digitalWrite(2, HIGH);
-  digitalWrite(3, HIGH);
-  digitalWrite(4, HIGH);
-  digitalWrite(5, LOW);
-  digitalWrite(6, LOW);
-  digitalWrite(7, LOW);
-  delay(500);
+void loop() {<br>
+  // tiga kiri nyala<br>
+  digitalWrite(2, HIGH);<br>
+  digitalWrite(3, HIGH);<br>
+  digitalWrite(4, HIGH);<br>
+  digitalWrite(5, LOW);<br>
+  digitalWrite(6, LOW);<br>
+  digitalWrite(7, LOW);<br>
+  delay(500);<br>
 
   // tiga kanan nyala
-  digitalWrite(2, LOW);
-  digitalWrite(3, LOW);
-  digitalWrite(4, LOW);
-  digitalWrite(5, HIGH);
-  digitalWrite(6, HIGH);
-  digitalWrite(7, HIGH);
-  delay(500);
+  digitalWrite(2, LOW);<br>
+  digitalWrite(3, LOW);<br>
+  digitalWrite(4, LOW);<br>
+  digitalWrite(5, HIGH);<br>
+  digitalWrite(6, HIGH);<br>
+  digitalWrite(7, HIGH);<br>
+  delay(500);<br>
 } .
 Penjelasan Singkat:<br>
--setup() mengatur pin 2–7 sebagai output,
--Tiga LED kiri dinyalakan lebih dulu,
--Setelah delay, tiga LED kanan dinyalakan,
--Program diulang terus menerus
-Untuk link program ada di nomor 1.
+-setup() mengatur pin 2–7 sebagai output,<br>
+-Tiga LED kiri dinyalakan lebih dulu,<br>
+-Setelah delay, tiga LED kanan dinyalakan,<br>
+-Program diulang terus menerus<br>
+Untuk link program ada di nomor 1.<br>
