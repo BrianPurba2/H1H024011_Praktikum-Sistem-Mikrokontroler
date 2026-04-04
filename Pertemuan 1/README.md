@@ -1,3 +1,47 @@
+**Pertanyaan 1.5**
+1. Pada kondisi apa program masuk ke blok if?
+Jawab:Program masuk ke blok if ketika nilai timeDelay kurang dari atau sama dengan 100, karena kondisi yang diperiksa adalah:
+if (timeDelay <= 100)
+Artinya saat delay sudah mencapai batas tercepat, program menjalankan reset.
+
+2. Pada kondisi apa program masuk ke blok else?
+Jawab:Program masuk ke blok else ketika nilai timeDelay masih lebih besar dari 100,pada kondisi ini delay dikurangi 100 agar LED berkedip semakin cepat.
+
+3. Apa fungsi dari perintah delay(timeDelay)?
+Jawab:Fungsi delay(timeDelay) adalah memberi jeda waktu nyala dan mati LED sesuai nilai timeDelay,semakin besar nilainya, LED berkedip semakin lambat. Semakin kecil nilainya, LED berkedip semakin cepat.
+
+4. Jika program yang dibuat memiliki alur mati → lambat → cepat → reset (mati), ubah menjadi LED tidak langsung reset → tetapi berubah dari cepat → sedang → mati dan berikan penjelasan disetiap baris kode nya dalam bentuk README.md!
+Jawab:
+const int ledPin = 6;
+int timeDelay = 100;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(ledPin, HIGH);
+  delay(timeDelay);
+
+  digitalWrite(ledPin, LOW);
+  delay(timeDelay);
+
+  if (timeDelay == 100) {
+    timeDelay = 500;
+  } else if (timeDelay == 500) {
+    timeDelay = 1000;
+  } else {
+    timeDelay = 1000;
+  }
+}
+Penjelasan singkat:
+ledPin = 6 → LED di pin 6 Arduino Uno
+timeDelay = 100 → mulai dari cepat
+LED menyala lalu mati
+Jika delay 100 → berubah sedang (500)
+Jika delay 500 → berubah lambat/mati
+
+**Pertanyaan 1.6**
 1. Gambarkan rangkaian schematic 5 LED running yang digunakan pada percobaan!
 Jawab:Rangkaian terdiri dari 6 LED yang dihubungkan ke pin digital Arduino Uno sebagai berikut:
 LED 1 → Pin 2
