@@ -1,4 +1,4 @@
-**Source code 1.5:**
+**Source code 1.5:**<br>
 const int ledPin = 6;<br>
 int timeDelay = 100;<br>
 
@@ -21,7 +21,7 @@ void loop() {<br>
     timeDelay = 1000;<br>
   }<br>
 }<br>
-**Source code 1.6**
+**Source code 1.6**<br>
 void setup() {<br>
   for (int pin = 2; pin <= 7; pin++) {<br>
     pinMode(pin, OUTPUT);<br>
