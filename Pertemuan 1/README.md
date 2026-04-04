@@ -11,7 +11,7 @@ Jawab:Program masuk ke blok else ketika nilai timeDelay masih lebih besar dari 1
 Jawab:Fungsi delay(timeDelay) adalah memberi jeda waktu nyala dan mati LED sesuai nilai timeDelay,semakin besar nilainya, LED berkedip semakin lambat. Semakin kecil nilainya, LED berkedip semakin cepat.
 
 4. Jika program yang dibuat memiliki alur mati → lambat → cepat → reset (mati), ubah menjadi LED tidak langsung reset → tetapi berubah dari cepat → sedang → mati dan berikan penjelasan disetiap baris kode nya dalam bentuk README.md!
-Jawab:
+Jawab:<br>
 const int ledPin = 6;
 int timeDelay = 100;
 
@@ -34,7 +34,7 @@ void loop() {
     timeDelay = 1000;
   }
 }
-Penjelasan singkat:
+Penjelasan singkat:<br>
 -ledPin = 6 → LED di pin 6 Arduino Uno,
 -timeDelay = 100 → mulai dari cepat,
 -LED menyala lalu mati,
@@ -60,7 +60,7 @@ Jawab:Efek kiri ke kanan dibuat dengan perulangan for yang dimulai dari pin 2 sa
 Jawab:Efek kanan ke kiri dibuat dengan perulangan for kedua yang dimulai dari pin 7 sampai pin 2. Urutan pin dibalik sehingga LED menyala dari kanan ke kiri.
 
 4. Buatkan program agar LED menyala tiga LED kanan dan tiga LED kiri secara bergantian dan berikan penjelasan disetiap baris kode nya dalam bentuk README.md!
-Jawab:
+Jawab:<br>
 void setup() {
   for (int pin = 2; pin <= 7; pin++) {
     pinMode(pin, OUTPUT);
@@ -86,7 +86,7 @@ void loop() {
   digitalWrite(7, HIGH);
   delay(500);
 } 
-Penjelasan Singkat:
+Penjelasan Singkat:<br>
 -setup() mengatur pin 2–7 sebagai output,
 -Tiga LED kiri dinyalakan lebih dulu,
 -Setelah delay, tiga LED kanan dinyalakan,
