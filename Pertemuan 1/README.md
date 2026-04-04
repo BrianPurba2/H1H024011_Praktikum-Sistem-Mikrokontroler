@@ -11,8 +11,10 @@ Jawab:Program masuk ke blok else ketika nilai timeDelay masih lebih besar dari 1
 Jawab:Fungsi delay(timeDelay) adalah memberi jeda waktu nyala dan mati LED sesuai nilai timeDelay,semakin besar nilainya, LED berkedip semakin lambat. Semakin kecil nilainya, LED berkedip semakin cepat.
 
 4. Jika program yang dibuat memiliki alur mati → lambat → cepat → reset (mati), ubah menjadi LED tidak langsung reset → tetapi berubah dari cepat → sedang → mati dan berikan penjelasan disetiap baris kode nya dalam bentuk README.md!
+
 Jawab:<br>
-'''const int ledPin = 6;
+
+const int ledPin = 6;
 int timeDelay = 100;
 
 void setup() {
@@ -20,20 +22,30 @@ void setup() {
 }
 
 void loop() {
+  
   digitalWrite(ledPin, HIGH);
+  
   delay(timeDelay);
 
   digitalWrite(ledPin, LOW);
+  
   delay(timeDelay);
 
   if (timeDelay == 100) {
+
     timeDelay = 500;
+  
   } else if (timeDelay == 500) {
+  
     timeDelay = 1000;
+  
   } else {
+  
     timeDelay = 1000;
+  
   }
-}'''
+}
+
 Penjelasan singkat:<br>
 -ledPin = 6 → LED di pin 6 Arduino Uno,
 -timeDelay = 100 → mulai dari cepat,
