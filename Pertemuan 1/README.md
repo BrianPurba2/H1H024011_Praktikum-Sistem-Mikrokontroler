@@ -14,21 +14,21 @@ Jawab:Fungsi delay(timeDelay) adalah memberi jeda waktu nyala dan mati LED sesua
 
 Jawab:<br>
 
-const int ledPin = 6;
+const int ledPin = 6;<br>
 int timeDelay = 100;
 
-void setup() {
+void setup() {<br>
   pinMode(ledPin, OUTPUT);
 }
 
-void loop() {
+void loop() {<br>
   digitalWrite(ledPin, HIGH);
   delay(timeDelay);
 
-  digitalWrite(ledPin, LOW);
+  digitalWrite(ledPin, LOW);<br>
   delay(timeDelay);
 
-  if (timeDelay == 100) {
+  if (timeDelay == 100) {<br>
     timeDelay = 500;
   } else if (timeDelay == 500) {
     timeDelay = 1000;
