@@ -35,11 +35,11 @@ void loop() {
   }
 }
 Penjelasan singkat:
-ledPin = 6 → LED di pin 6 Arduino Uno
-timeDelay = 100 → mulai dari cepat
-LED menyala lalu mati
-Jika delay 100 → berubah sedang (500)
-Jika delay 500 → berubah lambat/mati
+-ledPin = 6 → LED di pin 6 Arduino Uno,
+-timeDelay = 100 → mulai dari cepat,
+-LED menyala lalu mati,
+-Jika delay 100 → berubah sedang (500),
+-Jika delay 500 → berubah lambat/mati.
 
 **Pertanyaan 1.6**
 1. Gambarkan rangkaian schematic 5 LED running yang digunakan pada percobaan!
@@ -87,8 +87,8 @@ void loop() {
   delay(500);
 } 
 Penjelasan Singkat:
--setup() mengatur pin 2–7 sebagai output
--Tiga LED kiri dinyalakan lebih dulu
--Setelah delay, tiga LED kanan dinyalakan
+-setup() mengatur pin 2–7 sebagai output,
+-Tiga LED kiri dinyalakan lebih dulu,
+-Setelah delay, tiga LED kanan dinyalakan,
 -Program diulang terus menerus
-Untuk link program ada di nomor 1
+Untuk link program ada di nomor 1.
