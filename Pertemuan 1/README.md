@@ -22,29 +22,20 @@ void setup() {
 }
 
 void loop() {
-  
   digitalWrite(ledPin, HIGH);
-  
   delay(timeDelay);
 
   digitalWrite(ledPin, LOW);
-  
   delay(timeDelay);
 
   if (timeDelay == 100) {
-
     timeDelay = 500;
-  
   } else if (timeDelay == 500) {
-  
     timeDelay = 1000;
-  
   } else {
-  
     timeDelay = 1000;
-  
   }
-}
+}.
 
 Penjelasan singkat:<br>
 -ledPin = 6 → LED di pin 6 Arduino Uno,
@@ -73,7 +64,7 @@ Jawab:Efek kanan ke kiri dibuat dengan perulangan for kedua yang dimulai dari pi
 
 4. Buatkan program agar LED menyala tiga LED kanan dan tiga LED kiri secara bergantian dan berikan penjelasan disetiap baris kode nya dalam bentuk README.md!
 Jawab:<br>
-'''void setup() {
+void setup() {
   for (int pin = 2; pin <= 7; pin++) {
     pinMode(pin, OUTPUT);
   }
@@ -97,7 +88,7 @@ void loop() {
   digitalWrite(6, HIGH);
   digitalWrite(7, HIGH);
   delay(500);
-} '''
+} .
 Penjelasan Singkat:<br>
 -setup() mengatur pin 2–7 sebagai output,
 -Tiga LED kiri dinyalakan lebih dulu,
