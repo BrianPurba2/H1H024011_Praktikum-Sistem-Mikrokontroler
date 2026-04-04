@@ -15,34 +15,34 @@ Jawab:Fungsi delay(timeDelay) adalah memberi jeda waktu nyala dan mati LED sesua
 Jawab:<br>
 
 const int ledPin = 6;<br>
-int timeDelay = 100;
+int timeDelay = 100;<br>
 
 void setup() {<br>
-  pinMode(ledPin, OUTPUT);
-}
+  pinMode(ledPin, OUTPUT);<br>
+}<br>
 
 void loop() {<br>
-  digitalWrite(ledPin, HIGH);
-  delay(timeDelay);.
+  digitalWrite(ledPin, HIGH);<br>
+  delay(timeDelay);<br>
 
   digitalWrite(ledPin, LOW);<br>
-  delay(timeDelay);
+  delay(timeDelay);<br>
 
   if (timeDelay == 100) {<br>
-    timeDelay = 500;
-  } else if (timeDelay == 500) {
-    timeDelay = 1000;
-  } else {
-    timeDelay = 1000;
-  }
-}.
+    timeDelay = 500;<br>
+  } else if (timeDelay == 500) {<br>
+    timeDelay = 1000;<br>
+  } else {<br>
+    timeDelay = 1000;<br>
+  }<br>
+}<br>
 
 Penjelasan singkat:<br>
--ledPin = 6 → LED di pin 6 Arduino Uno,
--timeDelay = 100 → mulai dari cepat,
--LED menyala lalu mati,
--Jika delay 100 → berubah sedang (500),
--Jika delay 500 → berubah lambat/mati.
+-ledPin = 6 → LED di pin 6 Arduino Uno,<br>
+-timeDelay = 100 → mulai dari cepat,<br>
+-LED menyala lalu mati,<br>
+-Jika delay 100 → berubah sedang (500),<br>
+-Jika delay 500 → berubah lambat/mati.<br>
 
 **Pertanyaan 1.6**
 1. Gambarkan rangkaian schematic 5 LED running yang digunakan pada percobaan!
@@ -65,10 +65,10 @@ Jawab:Efek kanan ke kiri dibuat dengan perulangan for kedua yang dimulai dari pi
 4. Buatkan program agar LED menyala tiga LED kanan dan tiga LED kiri secara bergantian dan berikan penjelasan disetiap baris kode nya dalam bentuk README.md!
 Jawab:<br>
 void setup() {<br>
-  for (int pin = 2; pin <= 7; pin++) {
-    pinMode(pin, OUTPUT);
-  }
-}
+  for (int pin = 2; pin <= 7; pin++) {<br>
+    pinMode(pin, OUTPUT);<br>
+  }<br>
+}<br>
 
 void loop() {<br>
   // tiga kiri nyala<br>
@@ -80,7 +80,7 @@ void loop() {<br>
   digitalWrite(7, LOW);<br>
   delay(500);<br>
 
-  // tiga kanan nyala
+  // tiga kanan nyala<br>
   digitalWrite(2, LOW);<br>
   digitalWrite(3, LOW);<br>
   digitalWrite(4, LOW);<br>
@@ -88,7 +88,7 @@ void loop() {<br>
   digitalWrite(6, HIGH);<br>
   digitalWrite(7, HIGH);<br>
   delay(500);<br>
-} .
+} <br>
 Penjelasan Singkat:<br>
 -setup() mengatur pin 2–7 sebagai output,<br>
 -Tiga LED kiri dinyalakan lebih dulu,<br>
