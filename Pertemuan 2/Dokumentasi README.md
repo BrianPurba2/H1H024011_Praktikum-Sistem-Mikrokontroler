@@ -1,1 +1,1 @@
-blob:https://web.whatsapp.com/822546ed-70d9-42e9-9598-ecc884834b1b
+![gambar tugaslah](https://github.com/user-attachments/assets/dc6e90ba-6f9e-473f-95d8-5e44c47f4a79)
