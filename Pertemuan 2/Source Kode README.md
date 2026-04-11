@@ -1,4 +1,4 @@
-**Seven Segment:**
+<h3>**Seven Segment:**</h3><br>
 // Pin 7-Segment (a b c d e f g dp)<br>
 const int segmentPins[8] = {7, 6, 5, 11, 10, 8, 9, 4};<br>
 
@@ -51,7 +51,7 @@ void loop()<br>
   delay(1000);<br>
 }<br>
 
-**Push Button:**
+<h3>**Push Button:**</h3><br>
 // Pin 7-Segment (a b c d e f g dp)<br>
 const int segmentPins[8] = {7, 6, 5, 11, 10, 8, 9, 4};<br>
 
