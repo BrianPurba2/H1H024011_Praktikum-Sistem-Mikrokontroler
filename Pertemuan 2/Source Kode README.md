@@ -1,130 +1,130 @@
 **Seven Segment:**
-// Pin 7-Segment (a b c d e f g dp)
-const int segmentPins[8] = {7, 6, 5, 11, 10, 8, 9, 4};
+// Pin 7-Segment (a b c d e f g dp)<br>
+const int segmentPins[8] = {7, 6, 5, 11, 10, 8, 9, 4};<br>
 
-// Counter mulai dari F (15)
-int counter = 15;
+// Counter mulai dari F (15)<br>
+int counter = 15;<br>
 
-// Pola digit 0-F
-byte digitPattern[16][8] = {
-  {1,1,1,1,1,1,0,0},
-  {0,1,1,0,0,0,0,0},
-  {1,1,0,1,1,0,1,0},
-  {1,1,1,1,0,0,1,0},
-  {0,1,1,0,0,1,1,0},
-  {1,0,1,1,0,1,1,0},
-  {1,0,1,1,1,1,1,0},
-  {1,1,1,0,0,0,0,0},
-  {1,1,1,1,1,1,1,0},
-  {1,1,1,1,0,1,1,0},
-  {1,1,1,0,1,1,1,0},
-  {0,0,1,1,1,1,1,0},
-  {1,0,0,1,1,1,0,0},
-  {0,1,1,1,1,0,1,0},
-  {1,0,0,1,1,1,1,0},
-  {1,0,0,0,1,1,1,0}
-};
+// Pola digit 0-F<br>
+byte digitPattern[16][8] = {<br>
+  {1,1,1,1,1,1,0,0},<br>
+  {0,1,1,0,0,0,0,0},<br>
+  {1,1,0,1,1,0,1,0},<br>
+  {1,1,1,1,0,0,1,0},<br>
+  {0,1,1,0,0,1,1,0},<br>
+  {1,0,1,1,0,1,1,0},<br>
+  {1,0,1,1,1,1,1,0},<br>
+  {1,1,1,0,0,0,0,0},<br>
+  {1,1,1,1,1,1,1,0},<br>
+  {1,1,1,1,0,1,1,0},<br>
+  {1,1,1,0,1,1,1,0},<br>
+  {0,0,1,1,1,1,1,0},<br>
+  {1,0,0,1,1,1,0,0},<br>
+  {0,1,1,1,1,0,1,0},<br>
+  {1,0,0,1,1,1,1,0},<br>
+  {1,0,0,0,1,1,1,0}<br>
+};<br>
 
-void displayDigit(int num)
-{
-  for(int i = 0; i < 8; i++)
-  {
-    digitalWrite(segmentPins[i], digitPattern[num][i]);
-  }
-}
+void displayDigit(int num)<br>
+{<br>
+  for(int i = 0; i < 8; i++)<br>
+  {<br>
+    digitalWrite(segmentPins[i], digitPattern[num][i]);<br>
+  }<br>
+}<br>
 
-void setup()
-{
-  for(int i = 0; i < 8; i++)
-  {
-    pinMode(segmentPins[i], OUTPUT);
-  }
-}
+void setup()<br>
+{<br>
+  for(int i = 0; i < 8; i++)<br>
+  {<br>
+    pinMode(segmentPins[i], OUTPUT);<br>
+  }<br>
+}<br>
 
-void loop()
-{
-  displayDigit(counter);
-  counter--;
+void loop()<br>
+{<br>
+  displayDigit(counter);<br>
+  counter--;<br>
 
-  if(counter < 0) counter = 15;
+  if(counter < 0) counter = 15;<br>
 
-  delay(1000);
-}
+  delay(1000);<br>
+}<br>
 
 **Push Button:**
-// Pin 7-Segment (a b c d e f g dp)
-const int segmentPins[8] = {7, 6, 5, 11, 10, 8, 9, 4};
+// Pin 7-Segment (a b c d e f g dp)<br>
+const int segmentPins[8] = {7, 6, 5, 11, 10, 8, 9, 4};<br>
 
-// Push button
-const int buttonUp = 2;     // increment
-const int buttonDown = 3;   // decrement
+// Push button<br>
+const int buttonUp = 2;     // increment<br>
+const int buttonDown = 3;   // decrement<br>
 
-// Counter
-int counter = 0;
+// Counter<br>
+int counter = 0;<br>
 
-// State tombol
-bool lastUpState = HIGH;
-bool lastDownState = HIGH;
+// State tombol<br>
+bool lastUpState = HIGH;<br>
+bool lastDownState = HIGH;<br>
 
-// Pola digit 0-F
-byte digitPattern[16][8] = {
-  {1,1,1,1,1,1,0,0}, {0,1,1,0,0,0,0,0},
-  {1,1,0,1,1,0,1,0}, {1,1,1,1,0,0,1,0},
-  {0,1,1,0,0,1,1,0}, {1,0,1,1,0,1,1,0},
-  {1,0,1,1,1,1,1,0}, {1,1,1,0,0,0,0,0},
-  {1,1,1,1,1,1,1,0}, {1,1,1,1,0,1,1,0},
-  {1,1,1,0,1,1,1,0}, {0,0,1,1,1,1,1,0},
-  {1,0,0,1,1,1,0,0}, {0,1,1,1,1,0,1,0},
-  {1,0,0,1,1,1,1,0}, {1,0,0,0,1,1,1,0}
-};
+// Pola digit 0-F<br>
+byte digitPattern[16][8] = {<br>
+  {1,1,1,1,1,1,0,0}, {0,1,1,0,0,0,0,0},<br>
+  {1,1,0,1,1,0,1,0}, {1,1,1,1,0,0,1,0},<br>
+  {0,1,1,0,0,1,1,0}, {1,0,1,1,0,1,1,0},<br>
+  {1,0,1,1,1,1,1,0}, {1,1,1,0,0,0,0,0},<br>
+  {1,1,1,1,1,1,1,0}, {1,1,1,1,0,1,1,0},<br>
+  {1,1,1,0,1,1,1,0}, {0,0,1,1,1,1,1,0},<br>
+  {1,0,0,1,1,1,0,0}, {0,1,1,1,1,0,1,0},<br>
+  {1,0,0,1,1,1,1,0}, {1,0,0,0,1,1,1,0}<br>
+};<br>
 
-// Fungsi tampil digit
-void displayDigit(int num)
-{
-  for(int i=0; i<8; i++)
-  {
-    digitalWrite(segmentPins[i], digitPattern[num][i]);
-  }
-}
+// Fungsi tampil digit<br>
+void displayDigit(int num)<br>
+{<br>
+  for(int i=0; i<8; i++)<br>
+  {<br>
+    digitalWrite(segmentPins[i], digitPattern[num][i]);<br>
+  }<br>
+}<br>
 
-void setup()
-{
-  for(int i=0; i<8; i++)
-  {
-    pinMode(segmentPins[i], OUTPUT);
-  }
+void setup()<br>
+{<br>
+  for(int i=0; i<8; i++)<br>
+  {<br>
+    pinMode(segmentPins[i], OUTPUT);<br>
+  }<br>
 
-  pinMode(buttonUp, INPUT_PULLUP);
-  pinMode(buttonDown, INPUT_PULLUP);
+  pinMode(buttonUp, INPUT_PULLUP);<br>
+  pinMode(buttonDown, INPUT_PULLUP);<br>
 
-  displayDigit(counter);
-}
+  displayDigit(counter);<br>
+}<br>
 
-void loop()
-{
-  bool currentUp = digitalRead(buttonUp);
-  bool currentDown = digitalRead(buttonDown);
+void loop()<br>
+{<br>
+  bool currentUp = digitalRead(buttonUp);<br>
+  bool currentDown = digitalRead(buttonDown);<br>
 
-  // Tombol increment
-  if(lastUpState == HIGH && currentUp == LOW)
-  {
-    counter++;
-    if(counter > 15) counter = 0;
+  // Tombol increment<br>
+  if(lastUpState == HIGH && currentUp == LOW)<br>
+  {<br>
+    counter++;<br>
+    if(counter > 15) counter = 0;<br>
 
-    displayDigit(counter);
-    delay(200);
-  }
+    displayDigit(counter);<br>
+    delay(200);<br>
+  }<br>
 
-  // Tombol decrement
-  if(lastDownState == HIGH && currentDown == LOW)
-  {
-    counter--;
-    if(counter < 0) counter = 15;
+  // Tombol decrement<br>
+  if(lastDownState == HIGH && currentDown == LOW)<br>
+  {<br>
+    counter--;<br>
+    if(counter < 0) counter = 15;<br>
 
-    displayDigit(counter);
-    delay(200);
-  }
+    displayDigit(counter);<br>
+    delay(200);<br>
+  }<br>
 
-  lastUpState = currentUp;
-  lastDownState = currentDown;
+  lastUpState = currentUp;<br>
+  lastDownState = currentDown;<br>
 }
