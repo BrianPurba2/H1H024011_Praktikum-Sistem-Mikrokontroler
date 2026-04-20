@@ -1,4 +1,4 @@
-**Pertanyaan Praktikum 3.5**<br>
+<h4>**Pertanyaan Praktikum 3.5**<br></h4>
 1) Jelaskan proses dari input keyboard hingga LED menyala/mati! <br>
 Jawab:<br>
 Prosesnya sebagai berikut:<br>
@@ -32,7 +32,7 @@ Program ini digunakan untuk mengontrol LED melalui Serial Monitor:<br>
 * '0' → LED OFF<br>
 * '2' → LED berkedip (blink terus)<br>
 
-
+```
 const int ledPin = 8; // Menentukan pin LED<br>
 
 char data;            // Variabel untuk menyimpan input dari serial<br>
@@ -83,6 +83,7 @@ void loop() {<br>
     delay(500);                 // Tunggu 0.5 detik<br>
   }<br>
 }<br>
+```
  Penjelasan Singkat:<br>
 * Serial digunakan untuk komunikasi antara komputer dan Arduino<br>
 * Input karakter digunakan untuk mengontrol LED<br>
@@ -100,7 +101,7 @@ Menggunakan delay() pengaruhnya adalah:<br>
 
 
 
-**Pertanyaan Praktikum 3.6**
+<h4>**Pertanyaan Praktikum 3.6**</h4>
 1) Jelaskan bagaimana cara kerja komunikasi I2C antara Arduino dan LCD pada rangkaian 
 tersebut! <br>
 Jawab:<br>
@@ -136,7 +137,7 @@ output) sehingga:<br>
 -Berikan penjelasan disetiap baris kode nya dalam bentuk README.md! <br>
 Jawab:<br>
 ## Program + Penjelasan per Baris<br>
-
+```
 #include <Wire.h>                  // Library komunikasi I2C<br>
 #include <LiquidCrystal_I2C.h>    // Library LCD I2C<br>
 #include <Arduino.h>              // Library dasar Arduino<br>
@@ -194,7 +195,7 @@ void loop() {<br>
 
   delay(200);                     // Delay agar tampilan stabil<br>
 }<br>
-
+```
 ## Kesimpulan<br>
 
 * UART digunakan untuk monitoring data di komputer<br>
