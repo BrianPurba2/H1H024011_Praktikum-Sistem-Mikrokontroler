@@ -196,14 +196,15 @@ void loop() {<br>
 
   delay(200);                     // Delay agar tampilan stabil<br>
 }<br>
-
+```
+```
 ## Kesimpulan<br>
 
 * UART digunakan untuk monitoring data di komputer<br>
 * I2C digunakan untuk menampilkan data di LCD<br>
 * Nilai ADC dapat dikonversi menjadi Volt dan Persen<br>
 * Bar level mempermudah visualisasi nilai<br>
-
+```
 4) Lengkapi table berikut berdasarkan pengamatan pada Serial Monitor
 Jawab:
 ```
