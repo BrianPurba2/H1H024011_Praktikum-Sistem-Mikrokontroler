@@ -138,6 +138,7 @@ output) sehingga:<br>
 Jawab:<br>
 ## Program + Penjelasan per Baris<br>
 ```
+
 #include <Wire.h>                  // Library komunikasi I2C<br>
 #include <LiquidCrystal_I2C.h>    // Library LCD I2C<br>
 #include <Arduino.h>              // Library dasar Arduino<br>
@@ -195,7 +196,7 @@ void loop() {<br>
 
   delay(200);                     // Delay agar tampilan stabil<br>
 }<br>
-
+```
 ## Kesimpulan<br>
 
 * UART digunakan untuk monitoring data di komputer<br>
@@ -205,6 +206,7 @@ void loop() {<br>
 
 4) Lengkapi table berikut berdasarkan pengamatan pada Serial Monitor
 Jawab:
+```
 | ADC | Volt(V) | Persen(%) |
 |-----|---------|-----------|
 | 1   | 0.00 V  |   0%      |
@@ -214,4 +216,3 @@ Jawab:
 | 96  | 0.47 V  |   9%      |
 
 
-```
