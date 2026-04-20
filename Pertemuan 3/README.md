@@ -1,4 +1,4 @@
-<h4>**Pertanyaan Praktikum 3.5**<br></h4>
+#**Pertanyaan Praktikum 3.5**<br>
 1) Jelaskan proses dari input keyboard hingga LED menyala/mati! <br>
 Jawab:<br>
 Prosesnya sebagai berikut:<br>
@@ -33,56 +33,56 @@ Program ini digunakan untuk mengontrol LED melalui Serial Monitor:<br>
 * '2' → LED berkedip (blink terus)<br>
 
 ```
-const int ledPin = 8; // Menentukan pin LED<br>
+const int ledPin = 8; // Menentukan pin LED
 
-char data;            // Variabel untuk menyimpan input dari serial<br>
-bool blinkMode = false; // Status mode blink<br>
-<br>
-void setup() {<br>
-  pinMode(ledPin, OUTPUT);     // Set pin LED sebagai output<br>
-  Serial.begin(9600);          // Memulai komunikasi serial<br>
-}<br>
+char data;            // Variabel untuk menyimpan input dari serial
+bool blinkMode = false; // Status mode blink
 
-void loop() {<br>
+void setup() {
+  pinMode(ledPin, OUTPUT);     // Set pin LED sebagai output
+  Serial.begin(9600);          // Memulai komunikasi serial
+}
 
-  if (Serial.available() > 0) {<br>
+void loop() {
 
-  data = Serial.read(); // Membaca data dari serialv
+  if (Serial.available() > 0) {
 
-  // Jika input '1'<br>
-    if (data == '1') {<br>
-      digitalWrite(ledPin, HIGH); // LED menyala<br>
-      blinkMode = false;          // Matikan mode blink<br>
-      Serial.println("LED ON");<br>
-    }<br>
+  data = Serial.read(); // Membaca data dari serial
 
-   // Jika input '0'<br>
-    else if (data == '0') {<br>
-      digitalWrite(ledPin, LOW);  // LED mati<br>
-      blinkMode = false;          // Matikan mode blink<br>
-      Serial.println("LED OFF");<br>
-    }<br>
+  // Jika input '1'
+    if (data == '1') {
+      digitalWrite(ledPin, HIGH); // LED menyala
+      blinkMode = false;          // Matikan mode blink
+      Serial.println("LED ON");
+    }
 
-   // Jika input '2'<br>
-    else if (data == '2') {<br>
-      blinkMode = true;           // Aktifkan mode blink<br>
-      Serial.println("LED BLINK MODE");<br>
-    }<br>
+   // Jika input '0'
+    else if (data == '0') {
+      digitalWrite(ledPin, LOW);  // LED mati
+      blinkMode = false;          // Matikan mode blink
+      Serial.println("LED OFF");
+    }
 
-  // Jika input tidak dikenali<br>
-    else {<br>
-      Serial.println("ERROR: Perintah tidak dikenal");<br>
-    }<br>
+   // Jika input '2'
+    else if (data == '2') {
+      blinkMode = true;           // Aktifkan mode blink
+      Serial.println("LED BLINK MODE");
+    }
+
+  // Jika input tidak dikenali
+    else {
+      Serial.println("ERROR: Perintah tidak dikenal");
+    }
   }
 
-  // Jika mode blink aktif<br>
-  if (blinkMode) {<br>
-    digitalWrite(ledPin, HIGH); // LED nyala<br>
-    delay(500);                 // Tunggu 0.5 detik<br>
-    digitalWrite(ledPin, LOW);  // LED mati<br>
-    delay(500);                 // Tunggu 0.5 detik<br>
-  }<br>
-}<br>
+  // Jika mode blink akti
+  if (blinkMode) {
+    digitalWrite(ledPin, HIGH); // LED nyala
+    delay(500);                 // Tunggu 0.5 detik
+    digitalWrite(ledPin, LOW);  // LED mati
+    delay(500);                 // Tunggu 0.5 detik
+  }
+}
 ```
  Penjelasan Singkat:<br>
 * Serial digunakan untuk komunikasi antara komputer dan Arduino<br>
@@ -99,9 +99,9 @@ Menggunakan delay() pengaruhnya adalah:<br>
 -LED berkedip sederhana<br>
 -Tapi tidak bisa membaca input selama delay<br>
 
+---
 
-
-<h4>**Pertanyaan Praktikum 3.6**</h4>
+#**Pertanyaan Praktikum 3.6**
 1) Jelaskan bagaimana cara kerja komunikasi I2C antara Arduino dan LCD pada rangkaian 
 tersebut! <br>
 Jawab:<br>
@@ -137,74 +137,77 @@ output) sehingga:<br>
 -Berikan penjelasan disetiap baris kode nya dalam bentuk README.md! <br>
 Jawab:<br>
 ## Program + Penjelasan per Baris<br>
-```
 
-#include <Wire.h>                  // Library komunikasi I2C<br>
-#include <LiquidCrystal_I2C.h>    // Library LCD I2C<br>
-#include <Arduino.h>              // Library dasar Arduino<br>
+```cpp
 
-LiquidCrystal_I2C lcd(0x27, 16, 2); // Inisialisasi LCD (alamat 0x27, 16 kolom, 2 baris)<br>
+#include <Wire.h>                  // Library komunikasi I2C
+#include <LiquidCrystal_I2C.h>    // Library LCD I2C
+#include <Arduino.h>              // Library dasar Arduino
 
-const int pinPot = A0;            // Pin potensiometer terhubung ke A0<br>
+LiquidCrystal_I2C lcd(0x27, 16, 2); // Inisialisasi LCD (alamat 0x27, 16 kolom, 2 baris)
 
-void setup() {<br>
-  Serial.begin(9600);             // Memulai komunikasi UART (Serial Monitor)<br>
-  lcd.init();                     // Inisialisasi LCD<br>
-  lcd.backlight();                // Menghidupkan lampu LCD<br>
-}<br>
+const int pinPot = A0;            // Pin potensiometer terhubung ke A0
 
-void loop() {<br>
+void setup() {
+  Serial.begin(9600);             // Memulai komunikasi UART (Serial Monitor)
+  lcd.init();                     // Inisialisasi LCD
+  lcd.backlight();                // Menghidupkan lampu LCD
+}
 
-  int nilai = analogRead(pinPot); // Membaca nilai ADC (0–1023)<br>
+void loop() {
 
-  float volt = nilai * (5.0 / 1023.0); // Mengubah ADC menjadi tegangan (Volt)<br>
+  int nilai = analogRead(pinPot); // Membaca nilai ADC (0–1023)
 
-  int persen = map(nilai, 0, 1023, 0, 100); // Mengubah ADC menjadi persen (0–100%)<br>
-<br>
-  int bar = map(nilai, 0, 1023, 0, 16); // Mengubah ADC menjadi panjang bar (0–16)<br>
+  float volt = nilai * (5.0 / 1023.0); // Mengubah ADC menjadi tegangan (Volt)
 
-  // ================= UART (Serial Monitor) =================<br>
-  Serial.print("ADC: ");          // Menampilkan teks "ADC:"<br>
-  Serial.print(nilai);            // Menampilkan nilai ADC<br>
-  Serial.print(" | Volt: ");      // Pemisah<br>
-  Serial.print(volt, 2);          // Menampilkan volt (2 angka desimal)<br>
+  int persen = map(nilai, 0, 1023, 0, 100); // Mengubah ADC menjadi persen (0–100%)
+
+  int bar = map(nilai, 0, 1023, 0, 16); // Mengubah ADC menjadi panjang bar (0–16)
+
+  // ================= UART (Serial Monitor) =================
+  Serial.print("ADC: ");          // Menampilkan teks "ADC:"
+  Serial.print(nilai);            // Menampilkan nilai ADC
+  Serial.print(" | Volt: ");      // Pemisah
+  Serial.print(volt, 2);          // Menampilkan volt (2 angka desimal)
   Serial.print(" V | Persen: ");  // Pemisah<br>
-  Serial.print(persen);           // Menampilkan persen<br>
-  Serial.println("%");            // Pindah baris<br>
+  Serial.print(persen);           // Menampilkan persen
+  Serial.println("%");            // Pindah baris
 
-  // ================= I2C (LCD) =================<br>
-  lcd.clear();                    // Membersihkan layar LCD<br>
+  // ================= I2C (LCD) =================
+  lcd.clear();                    // Membersihkan layar LCD
 
-  // Baris 1 → ADC dan Persen<br>
-  lcd.setCursor(0, 0);            // Posisi kolom 0 baris 0<br>
-  lcd.print("ADC:");              // Tampilkan teks<br>
-  lcd.print(nilai);               // Tampilkan nilai ADC<br>
-  lcd.print(" ");                 // Spasi<br>
-  lcd.print(persen);              // Tampilkan persen<br>
-  lcd.print("%");                 // Tampilkan simbol %<br>
+  // Baris 1 → ADC dan Persen
+  lcd.setCursor(0, 0);            // Posisi kolom 0 baris 0
+  lcd.print("ADC:");              // Tampilkan teks
+  lcd.print(nilai);               // Tampilkan nilai ADC
+  lcd.print(" ");                 // Spasi
+  lcd.print(persen);              // Tampilkan persen
+  lcd.print("%");                 // Tampilkan simbol %
 
-  // Baris 2 → Bar level<br>
-  lcd.setCursor(0, 1);            // Pindah ke baris kedua<br>
+  // Baris 2 → Bar level
+  lcd.setCursor(0, 1);            // Pindah ke baris kedua
 
-  for (int i = 0; i < 16; i++) {  // Loop 16 kolom LCD<br>
-    if (i < bar) {<br>
-      lcd.print((char)255);       // Karakter penuh (bar aktif)<br>
-    } else {<br>
-      lcd.print(" ");             // Kosong (bar tidak aktif)<br>
-    }<br>
-  }<br>
+  for (int i = 0; i < 16; i++) {  // Loop 16 kolom LCD
+    if (i < bar) {
+      lcd.print((char)255);       // Karakter penuh (bar aktif)
+    } else {
+      lcd.print(" ");             // Kosong (bar tidak aktif)
+    }
+  }
 
-  delay(200);                     // Delay agar tampilan stabil<br>
-}<br>
+  delay(200);                     // Delay agar tampilan stabil
+}
+
+---
 ```
-```
+
 ## Kesimpulan<br>
 
 * UART digunakan untuk monitoring data di komputer<br>
 * I2C digunakan untuk menampilkan data di LCD<br>
 * Nilai ADC dapat dikonversi menjadi Volt dan Persen<br>
 * Bar level mempermudah visualisasi nilai<br>
-```
+
 4) Lengkapi table berikut berdasarkan pengamatan pada Serial Monitor
 Jawab:
 ```
@@ -215,5 +218,5 @@ Jawab:
 | 49  | 0.24 V  |   5%      |
 | 74  | 0.36 V  |   7%      |
 | 96  | 0.47 V  |   9%      |
-
+---
 
