@@ -204,13 +204,13 @@ void loop() {<br>
 * Bar level mempermudah visualisasi nilai<br>
 
 4) Lengkapi table berikut berdasarkan pengamatan pada Serial Monitor
-Jawab:<br>
-| ADC | Volt(V) | Persen(%) |<br>
-|-----|---------|-----------|<br>
-| 1   | 0.00 V  |   0%      |<br>
-| 21  | 0.10 V  |   2%      |<br>
-| 49  | 0.24 V  |   5%      |<br>
-| 74  | 0.36 V  |   7%      |<br>
-| 96  | 0.47 V  |   9%      |<br>
+Jawab:
+| ADC | Volt(V) | Persen(%) |
+|-----|---------|-----------|
+| 1   | 0.00 V  |   0%      |
+| 21  | 0.10 V  |   2%      |
+| 49  | 0.24 V  |   5%      |
+| 74  | 0.36 V  |   7%      |
+| 96  | 0.47 V  |   9%      |
 
 
