@@ -195,7 +195,7 @@ void loop() {<br>
 
   delay(200);                     // Delay agar tampilan stabil<br>
 }<br>
-```
+
 ## Kesimpulan<br>
 
 * UART digunakan untuk monitoring data di komputer<br>
